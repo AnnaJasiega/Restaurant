@@ -1,18 +1,32 @@
 body {
     align-items: center;
+    background-image: url(tlo.jpg);
+    font-family: serif;
+    
 }
 .container{
     width: 600px;
-    height: 400px;
-    background: black;
-    margin: 0 auto;
-    margin-top: 100px;
-    color: white;
+    height: 600px;
+    background: rgb(239, 239, 241);
+    color: black;
+    display: block;
+    align-items: center;
+    margin: 50px auto;
+    border:1px dashed grey;
+    padding:20px;
+    position: relative;
 }
 .menu {
     padding-top: 40px;
     font-size: 1.25em ;
+    width: 30%;
+    height: 100%;
+    float: left;
+    text-transform: uppercase;
+    line-height: 100%;
+    text-align: center;
+    font-weight: 700; 
 }
 ul {
-    list-style-type: hiragana;
+    list-style-type: none;
 }

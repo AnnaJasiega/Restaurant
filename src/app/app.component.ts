@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {  Dish  } from './dishes/dish'
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Restaurant';
+  public orderList: Array<Dish> = [];
+
+  onEmited(data){
+  this.orderList.push(data)  
+  }
 }

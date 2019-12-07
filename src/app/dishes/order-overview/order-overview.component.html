@@ -1,0 +1,10 @@
+        <ul>
+                <li>Aktualne zamówienie</li>
+                <li *ngFor="let order of orderList; let i=index" >{{  i+1  }}. {{order.name}} </li> 
+           
+              <li id="dashed">  </li>  
+              <li id="lastLi"> {{  total }} zł</li>
+        </ul>
+       
+
+
