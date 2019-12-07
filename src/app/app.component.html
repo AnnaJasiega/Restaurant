@@ -1,11 +1,15 @@
 
-    
-   <app-order-overview [orderList]="orderList" class="menu">
-</app-order-overview>
-      
-
-
+   <app-order-overview 
+   [orderList]="orderList" 
+   [total] = 'total'
+   class="menu">
+          </app-order-overview>
+     
   <app-dishes
-  (emitOrderList) = "onEmited($event)"
-  ></app-dishes>
+  (emitOrderList) = "onEmited($event)">
+   </app-dishes>
+
+
+
+
 

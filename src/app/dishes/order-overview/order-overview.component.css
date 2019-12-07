@@ -1,6 +1,9 @@
 
-#dasehd {
-    border: 1px solid grey;
+.firstLi {
+    border-bottom: 1px dashed grey;
+}
+.lastLi {
+    border-top: 1px dashed grey;
 }
 ul {
     
