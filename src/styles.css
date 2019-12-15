@@ -1,7 +1,8 @@
 body {
     align-items: center;
     background-image: url(tlo.jpg);
-    font-family: serif;
+    font-family: fantasy;
+    font-weight: 200;
     
 }
 .container{
@@ -25,7 +26,7 @@ body {
     text-transform: uppercase;
     line-height: 100%;
     text-align: center;
-    font-weight: 700; 
+    font-weight: 300; 
 }
 ul {
     list-style-type: none;

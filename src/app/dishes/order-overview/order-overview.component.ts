@@ -1,6 +1,7 @@
 import { Component, OnInit, Input,  } from '@angular/core';
 import { DishesComponent } from '../dishes-overview/dishes.component';
 import { Dish } from '../dish';
+import {  OrderListService } from './order-list.service';
 
 
 @Component({
@@ -15,11 +16,16 @@ export class OrderOverviewComponent implements OnInit {
   @Input('total') total: number;
 
 
-  constructor() { }
+  constructor(
+    private orderListService: OrderListService
+  ) { }
   
  
   ngOnInit() {
-   
+    this.orderListService.change.subscribe(data => {
+      this.orderList.push(data);
+      this.total =+ data.price
+    });
     
   }
 

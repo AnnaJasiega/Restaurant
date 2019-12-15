@@ -1,8 +1,9 @@
 
 <ul>
     <li id="firstLi">Zapraszamy do zapoznania się z naszym menu</li>
-    <li *ngFor="let dish of dishesList let i=index" (click)='click(i)'>   {{ dish.id }}. {{ dish.name }}
-        <span *ngIf="isVisible[i]">       -  {{ dish.price }} złotych</span>
+    <li *ngFor="let dish of dishesList let i=index" (click)='click(i)' >   {{ dish.id }}. {{ dish.name }}
+        <app-dish-details *ngIf="isVisible[i]"
+        [index]='index'></app-dish-details>
     </li>
 </ul>
 
