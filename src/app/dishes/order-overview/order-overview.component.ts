@@ -1,7 +1,7 @@
 import { Component, OnInit, Input,  } from '@angular/core';
-import { DishesComponent } from '../dishes-overview/dishes.component';
 import { Dish } from '../dish';
-import {  OrderListService } from './order-list.service';
+import { OrderListService } from './order-list.service';
+import { PriceService } from './price.service';
 
 
 @Component({
@@ -13,20 +13,21 @@ export class OrderOverviewComponent implements OnInit {
 
     
   @Input('orderList') orderList: Array<Dish>;
-  @Input('total') total: number;
+  @Input('price') price: number;
 
 
   constructor(
-    private orderListService: OrderListService
+    private orderListService: OrderListService, private priceService: PriceService
   ) { }
   
  
   ngOnInit() {
     this.orderListService.change.subscribe(data => {
       this.orderList.push(data);
-      this.total =+ data.price
     });
-    
+    this.priceService.change.subscribe(data => {
+      this.price = data
+    })
   }
 
 }

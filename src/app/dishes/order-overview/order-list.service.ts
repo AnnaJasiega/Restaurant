@@ -1,4 +1,4 @@
-import { Injectable,Output, EventEmitter } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { Dish } from '../dish';
 
 
@@ -7,16 +7,13 @@ import { Dish } from '../dish';
   providedIn: 'root'
 })
 export class OrderListService {
-  orderListService: Array<Dish>;
+
+  dish:Array<Dish> = []
   
- 
-    dish:Array<Dish> = []
+  @Output() change: EventEmitter<any> = new EventEmitter();
   
-    @Output() change: EventEmitter<any> = new EventEmitter();
-  
-    add(data) {
-      this.dish = data;
-      this.change.emit(this.dish);
-    }
-  
+  add(data) {
+  this.dish = data;
+  this.change.emit(this.dish);
   }
+}
