@@ -2,6 +2,7 @@ import { Component, OnInit, Input,  } from '@angular/core';
 import { Dish } from '../dish';
 import { OrderListService } from './order-list.service';
 import { PriceService } from './price.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -17,7 +18,9 @@ export class OrderOverviewComponent implements OnInit {
 
 
   constructor(
-    private orderListService: OrderListService, private priceService: PriceService
+    private orderListService: OrderListService, 
+    private priceService: PriceService,
+    //private route: ActivatedRoute,
   ) { }
   
  

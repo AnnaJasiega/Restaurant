@@ -1,7 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
 import { DishListService } from '../dish-list.service';
 import { Dish } from '../dish';
-import { OrderListService } from '../order-overview/order-list.service'
+import { OrderListService } from '../order-overview/order-list.service';
+import { PriceService } from '../order-overview/price.service';
 
 @Component({
   selector: 'app-dish-details',
@@ -13,7 +14,7 @@ export class DishDetailsComponent implements OnInit {
   dish: Dish;
   
   @Input('index') index: number;
-  constructor(private service:DishListService, private orderListService: OrderListService) { }
+  constructor(private service:DishListService, private orderListService: OrderListService, private priceService: PriceService) { }
  
   ngOnInit() {
   this.dishesList = this.service.getDataFromModel();
@@ -22,5 +23,6 @@ export class DishDetailsComponent implements OnInit {
 
   click(){
   this.orderListService.add(this.dish);
+  this.priceService.totalPrice(this.dish)
   }
 }

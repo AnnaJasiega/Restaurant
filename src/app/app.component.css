@@ -61,7 +61,7 @@ body {
     display: block;
     align-items: center;
     margin: 50px auto;
-    border:1px dashed grey;
+    border:1px dashed blue;
     padding:20px;
     position: relative;
 }

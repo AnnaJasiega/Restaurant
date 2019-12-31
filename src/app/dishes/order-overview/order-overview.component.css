@@ -1,9 +1,9 @@
 
 .firstLi {
-    border-bottom: 1px dashed grey;
+    border-bottom: 1px dashed rgb(102, 159, 224);
 }
 .lastLi {
-    border-top: 1px dashed grey;
+    border-top: 1px dashed  rgb(102, 159, 224);
 }
 ul {
     

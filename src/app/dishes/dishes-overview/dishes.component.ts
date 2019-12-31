@@ -26,8 +26,6 @@ export class DishesComponent implements OnInit {
     } else {
     this.isVisible[i] = false;
     }
-    
-    console.log(i)
     this.index = i;
   };
 
