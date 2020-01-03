@@ -1,1 +1,23 @@
-<p>your-order works!</p>
+<table class="table table-hover">
+    <thead>
+        <tr class="table-primary">
+            <th colspan='5' style="text-align: center;">Twoje zamówienie</th>
+        </tr>
+        <tr>
+            <th>#</th>
+            <th>Nazwa</th>
+            <th>Cena za sztukę</th>
+            <th>Ilość</th>
+            <th>Łączna cena</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor='let order of orderList; let i = index'>
+        <td>{{ i+1 }}.</td>  
+        <td>{{ order.name }}</td>
+        <td>{{ order.price }}</td>
+        <td>{{ order.id }}</td>
+        <td>{{ order.price*order.id }}</td>
+    </tr>
+    </tbody>   
+</table>

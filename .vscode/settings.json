@@ -1,0 +1,6 @@
+{
+    "debug.console.lineHeight": 1,
+    "debug.inlineValues": true,
+    "editor.suggest.insertHighlight": true,
+    "markdown.preview.breaks": true
+}

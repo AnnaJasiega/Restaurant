@@ -8,12 +8,18 @@ import { Dish } from '../dish';
 })
 export class OrderListService {
 
-  dish:Array<Dish> = []
+  dish:Array<Dish> = [];
+  orderList: Array<Dish> = [];
   
   @Output() change: EventEmitter<any> = new EventEmitter();
   
-  add(data) {
+  public add(data) {
   this.dish = data;
+  this.orderList.push(data);
   this.change.emit(this.dish);
+  }
+  
+  public getDataFromOrderList() {
+    return this.orderList;
   }
 }

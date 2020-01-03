@@ -20,7 +20,7 @@ export class OrderOverviewComponent implements OnInit {
   constructor(
     private orderListService: OrderListService, 
     private priceService: PriceService,
-    //private route: ActivatedRoute,
+    private route: ActivatedRoute,
   ) { }
   
  

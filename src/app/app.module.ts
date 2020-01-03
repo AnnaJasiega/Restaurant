@@ -13,7 +13,6 @@ import { PriceService } from './dishes/order-overview/price.service';
 import { YourOrderComponent } from './order/your-order/your-order.component';
 import { MainComponent } from './main/main.component';
 
-//import { AppRoutingModule } from './app-routing.module'
 
 const routes: Routes = [
   { path: 'yourorder', component: YourOrderComponent },
@@ -38,7 +37,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes, {
     enableTracing: true
     })
-   //AppRoutingModule,
+  
   ],
   providers: [OrderListService, DishListService, PriceService],
   bootstrap: [AppComponent]
