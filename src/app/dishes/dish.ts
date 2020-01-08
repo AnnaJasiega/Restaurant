@@ -2,11 +2,13 @@ export class Dish {
     private id: number;
     private name: string;
     private price: number;
+    private quantity: number;
 
-    constructor(id, name, price) {
+    constructor(id, name, price, quantity) {
         this.id = id;
         this.name = name;
         this.price = price;
+        this.quantity = quantity;
     }
 
     public get $id(): number {
@@ -17,7 +19,10 @@ export class Dish {
     }
     public get $price(): number {
 		return this.price;
-	}
+    }
+    public get $quantity(): number {
+      return this.quantity;
+      }
     public set $id(value:number) {
 		this.id = value;
     }
@@ -27,4 +32,7 @@ export class Dish {
     public set $price(value:number) {
 		this.price = value;
     }
+    public set $quantity(value:number) {
+      this.quantity = value;
+      }
 }

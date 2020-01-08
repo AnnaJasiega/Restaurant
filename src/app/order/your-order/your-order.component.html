@@ -12,12 +12,12 @@
         </tr>
     </thead>
     <tbody>
-    <tr *ngFor='let order of orderList; let i = index'>
+    <tr *ngFor='let order of sortedList; let i = index'>
         <td>{{ i+1 }}.</td>  
         <td>{{ order.name }}</td>
         <td>{{ order.price }}</td>
-        <td>{{ order.id }}</td>
-        <td>{{ order.price*order.id }}</td>
+        <td>{{ order.quantity }}</td>
+        <td>{{ order.price*order.quantity }}</td>
     </tr>
     </tbody>   
 </table>
