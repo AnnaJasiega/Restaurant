@@ -13,6 +13,7 @@ export class YourOrderComponent implements OnInit {
   dishesList: Array<Dish> = [];
   orderList: Array<Dish> = [];
   sortedList: Array<Dish> = [];
+  isVisible: Array<boolean> = []
   
    
 
@@ -33,12 +34,24 @@ export class YourOrderComponent implements OnInit {
       }
      
   } 
+  click (i) {
+    this.isVisible[i] = true;
+       
+  }
  
   constructor(
     private orderListService: OrderListService, 
     private dishListService: DishListService,
   ) { }
 
+  enter(i) {
+    console.log("ANIA");
+    this.isVisible[i] = false;
+    console.log("ANIA");
+    
+    //this.sortedList[i].$quantity = value;
+    
+    }
 
 
   ngOnInit() {this.orderList = this.orderListService.getDataFromOrderList();

@@ -12,12 +12,14 @@
         </tr>
     </thead>
     <tbody>
-    <tr *ngFor='let order of sortedList; let i = index'>
+    <tr *ngFor='let order of sortedList; let i = index' (dblclick)=click(i)>
         <td>{{ i+1 }}.</td>  
         <td>{{ order.name }}</td>
         <td>{{ order.price }}</td>
-        <td>{{ order.quantity }}</td>
-        <td>{{ order.price*order.quantity }}</td>
+        <td *ngIf ='!isVisible[i]'>{{ order.quantity }}</td>
+        <td *ngIf ='isVisible[i]'><input #box type='text' (keyup.enter) = enter(i) [ngModel] ='{{order.quantity}}'></td>
+        <td>{{ order.price*order.quantity }}</td> 
     </tr>
-    </tbody>   
+    </tbody> 
 </table>
+<p>* kliknij dwukrotnie, żeby edytować zamówioną ilość</p>
