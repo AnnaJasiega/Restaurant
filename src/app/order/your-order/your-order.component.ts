@@ -13,7 +13,8 @@ export class YourOrderComponent implements OnInit {
   dishesList: Array<Dish> = [];
   orderList: Array<Dish> = [];
   sortedList: Array<Dish> = [];
-  isVisible: Array<boolean> = []
+  isVisible: Array<boolean> = [];
+  i: number;
   
    
 
@@ -36,6 +37,7 @@ export class YourOrderComponent implements OnInit {
   } 
   click (i) {
     this.isVisible[i] = true;
+    this.i = i
        
   }
  
@@ -44,15 +46,18 @@ export class YourOrderComponent implements OnInit {
     private dishListService: DishListService,
   ) { }
 
-  enter(i) {
-    console.log("ANIA");
-    this.isVisible[i] = false;
-    console.log("ANIA");
-    
-    //this.sortedList[i].$quantity = value;
-    
-    }
+  enter(value) {
+    this.isVisible[this.i] = false;
+    this.sortedList[this.i].$quantity = value;
+  }
 
+  getTotal() {
+    let total:number = 0;
+    for (let i=0; i<this.sortedList.length; i++){
+      total += (this.sortedList[i].$price*this.sortedList[i].$quantity);
+    }
+    return total;
+  }
 
   ngOnInit() {this.orderList = this.orderListService.getDataFromOrderList();
     this.dishesList = this.dishListService.getDataFromModel();

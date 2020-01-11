@@ -17,9 +17,12 @@
         <td>{{ order.name }}</td>
         <td>{{ order.price }}</td>
         <td *ngIf ='!isVisible[i]'>{{ order.quantity }}</td>
-        <td *ngIf ='isVisible[i]'><input #box type='text' (keyup.enter) = enter(i) [ngModel] ='{{order.quantity}}'></td>
-        <td>{{ order.price*order.quantity }}</td> 
+        <td *ngIf ='isVisible[i]' ><input #box type='number' (keyup.enter) = enter(box.value) ></td>
+        <td #total[i]>{{ order.price*order.quantity }}</td> 
     </tr>
+ 
+   
     </tbody> 
 </table>
-<p>* kliknij dwukrotnie, żeby edytować zamówioną ilość</p>
+<p id="total"> Razem: {{ getTotal() }} zł</p>
+<p>* kliknij dwukrotnie, żeby edytować zamówioną ilość, następnie wciśnij enter</p>
