@@ -17,7 +17,7 @@
         <td>{{ order.name }}</td>
         <td>{{ order.price }}</td>
         <td *ngIf ='!isVisible[i]'>{{ order.quantity }}</td>
-        <td *ngIf ='isVisible[i]' ><input #box type='number' (keyup.enter) = enter(box.value) ></td>
+        <td *ngIf ='isVisible[i]' ><input #box type='number' class="form-control" id="exampleFormControlInput1" (keyup.enter) = enter(box.value) ></td>
         <td #total[i]>{{ order.price*order.quantity }}</td> 
     </tr>
  
@@ -25,4 +25,5 @@
     </tbody> 
 </table>
 <p id="total"> Razem: {{ getTotal() }} zł</p>
-<p>* kliknij dwukrotnie, żeby edytować zamówioną ilość, następnie wciśnij enter</p>
+<button class="btn btn-outline-info btn-block" routerLink='/address'>Przejdź do finalizacji zamówienia</button>
+<p id='instr'>* kliknij dwukrotnie, żeby edytować zamówioną ilość, następnie wciśnij enter</p>

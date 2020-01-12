@@ -1,0 +1,49 @@
+<p>adress-data works!</p>
+<form [formGroup]="addressForm" class="form-group row">
+        <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Imię: </label>
+                <div class="col-sm-10">
+                <input type='text' formControlName="firstName" class="form-control" placeholder="Imię">
+                </div>
+        </div>
+
+        <div class="form-group row">  
+            <label class="col-sm-2 col-form-label">Nazwisko: </label>
+            <div class="col-sm-10">
+            <input type='text' formControlName="lastName" class="form-control" placeholder="Nazwisko">
+            </div>
+        </div>
+      
+
+    <div class="form-row">
+        <div class="form-group"> 
+            <label for="inputAddress">
+                Ulica: </label>
+                <input type='text' formControlName="street" class="form-control" id="inputAddress" placeholder="ul. Kowalska">
+            
+        </div>
+        <div class="form-group col-md-4">  
+            <label for="inputAddress">
+                Numer domu: </label>
+                <input type='text' formControlName="postCode" class="form-control" id="inputAddress2" placeholder="12">
+            
+        </div>
+    </div> 
+    
+    <div class="form-row">
+        <div class="form-group col-md-2"> 
+            <label for="inputAddress">
+                Kod pocztowy: </label>
+                <input type='text' formControlName="postCode" class="form-control" id="inputZip">
+           
+        </div>
+        <div class="form-group col-md-6">  
+            <label for="inputAddress">
+                Miejscowość: </label>
+                <input type='text' formControlName="city" class="form-control" id="inputCity">
+            
+        </div>
+    </div> 
+
+
+</form>
